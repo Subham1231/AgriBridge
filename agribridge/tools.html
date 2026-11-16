@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Explore Tools | AgriBridge</title>
+  <link rel="stylesheet" href="style.css">
+
+  <style>
+    .tools-hero {
+      padding: 65px 0 45px;
+      text-align: center;
+    }
+
+    .tools-hero .eyebrow {
+      color: var(--green);
+      font-weight: 700;
+      font-size: 13px;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+    }
+
+    .tools-hero h1 {
+      max-width: 750px;
+      margin: 14px auto;
+      font-size: clamp(36px, 5vw, 56px);
+      line-height: 1.12;
+    }
+
+    .tools-hero p {
+      max-width: 600px;
+      margin: 0 auto;
+      color: var(--muted);
+      line-height: 1.7;
+    }
+
+    .tools-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 24px;
+      padding: 20px 0 70px;
+    }
+
+    .tool-card {
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg, 18px);
+      padding: 30px;
+      box-shadow: var(--shadow);
+    }
+
+    .tool-icon {
+      width: 48px;
+      height: 48px;
+      display: grid;
+      place-items: center;
+      background: var(--green-light);
+      color: var(--green);
+      border-radius: 14px;
+      font-size: 23px;
+      margin-bottom: 20px;
+    }
+
+    .tool-card h2 {
+      font-size: 23px;
+      margin-bottom: 9px;
+    }
+
+    .tool-card>p {
+      color: var(--muted);
+      line-height: 1.6;
+      margin-bottom: 24px;
+    }
+
+    .tool-fields {
+      display: grid;
+      gap: 16px;
+    }
+
+    .tool-fields label {
+      display: block;
+      font-weight: 600;
+      font-size: 14px;
+      margin-bottom: 7px;
+    }
+
+    .tool-fields input,
+    .tool-fields select {
+      width: 100%;
+      padding: 12px 14px;
+      border: 1px solid var(--border);
+      border-radius: 9px;
+      background: var(--white);
+      font: inherit;
+    }
+
+    .tool-result {
+      margin-top: 22px;
+      padding: 18px;
+      border-radius: 12px;
+      background: var(--green-light);
+    }
+
+    .tool-result span {
+      display: block;
+      color: var(--muted);
+      font-size: 13px;
+      margin-bottom: 6px;
+    }
+
+    .tool-result strong {
+      color: var(--green-dark);
+      font-size: 25px;
+    }
+
+    .tool-note {
+      margin-top: 13px;
+      color: var(--muted);
+      font-size: 12px;
+      line-height: 1.5;
+    }
+
+    .coming-soon {
+      display: inline-block;
+      margin-top: 12px;
+      padding: 6px 11px;
+      border-radius: 30px;
+      background: var(--green-light);
+      color: var(--green);
+      font-size: 12px;
+      font-weight: 700;
+    }
+
+    .tools-bottom {
+      margin-bottom: 65px;
+      padding: 35px;
+      background: var(--green-dark);
+      color: white;
+      border-radius: 18px;
+      text-align: center;
+    }
+
+    .tools-bottom h2 {
+      margin-bottom: 10px;
+    }
+
+    .tools-bottom p {
+      color: rgba(255, 255, 255, .75);
+      line-height: 1.6;
+    }
+
+    @media (max-width: 700px) {
+      .tools-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .tool-card {
+        padding: 23px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- Navigation -->
+  <header class="navbar">
+    <a href="index.html" class="logo">AgriBridge</a>
+
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="mandi.html">Mandi Prices</a>
+      <a href="how-it-works.html">How It Works</a>
+      <a href="tools.html" class="active">Explore Tools</a>
+    </nav>
+
+    <a href="marketplace.html" class="button primary nav-cta">
+      Marketplace
+    </a>
+  </header>
+
+
+  <main>
+
+    <!-- Page Introduction -->
+    <section class="page-container tools-hero">
+      <span class="eyebrow">AgriBridge Tools</span>
+
+      <h1>Make smarter decisions for your harvest.</h1>
+
+      <p>
+        Explore simple tools designed to help farmers understand
+        market trends, estimate profits and make better decisions.
+      </p>
+    </section>
+
+
+    <!-- Tools -->
+    <section class="page-container tools-grid">
+
+      <!-- Price Prediction -->
+      <article class="tool-card">
+        <div class="tool-icon">↗</div>
+
+        <h2>Price Prediction</h2>
+
+        <p>
+          Explore an example of how market trends can help
+          estimate the possible future price of a crop.
+        </p>
+
+        <div class="tool-fields">
+          <div>
+            <label for="crop">Select Crop</label>
+            <select id="crop">
+              <option>Tomato</option>
+              <option>Potato</option>
+              <option>Onion</option>
+              <option>Rice</option>
+              <option>Wheat</option>
+            </select>
+          </div>
+
+          <div>
+            <label for="market">Select Market</label>
+            <select id="market">
+              <option>Purulia</option>
+              <option>Bankura</option>
+              <option>Kolkata</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="tool-result">
+          <span>Illustrative estimated price</span>
+          <strong>₹28 / kg</strong>
+        </div>
+
+        <p class="tool-note">
+          This is a demonstration value, not a live prediction.
+        </p>
+      </article>
+
+
+
+      <!-- Profit Calculator -->
+      <article class="tool-card">
+        <div class="tool-icon">₹</div>
+
+        <h2>Profit Calculator</h2>
+
+        <p>
+          Calculate your estimated earnings by comparing
+          your selling price with your production cost.
+        </p>
+
+        <div class="tool-fields">
+
+          <div>
+            <label for="quantity">Quantity (kg)</label>
+            <input type="number" id="quantity" min="0" step="any" placeholder="e.g. 500">
+          </div>
+
+          <div>
+            <label for="selling-price">Selling Price (₹ / kg)</label>
+            <input type="number" id="selling-price" min="0" step="any" placeholder="e.g. 25">
+          </div>
+
+          <div>
+            <label for="cost-price">Production Cost (₹ / kg)</label>
+            <input type="number" id="cost-price" min="0" step="any" placeholder="e.g. 15">
+          </div>
+
+          <button type="button" class="button primary" onclick="calculateProfit()">
+            Calculate Profit
+          </button>
+
+        </div>
+
+        <div class="tool-result" aria-live="polite">
+          <span id="result-label">Your estimated profit</span>
+          <strong id="profit-result">₹0.00</strong>
+          <p id="result-details"></p>
+        </div>
+
+        <p class="tool-note">
+          Calculation excludes additional expenses such as transportation
+          and market fees.
+        </p>
+      </article>
+
+
+
+      <!-- Market Insights -->
+      <article class="tool-card">
+        <div class="tool-icon">▥</div>
+
+        <h2>Market Insights</h2>
+
+        <p>
+          Understand how crop prices change across different
+          markets and explore sample market comparisons.
+        </p>
+
+        <div class="tool-result">
+          <span>Example market comparison</span>
+          <strong>₹22 – ₹28 / kg</strong>
+        </div>
+
+        <p class="tool-note">
+          Illustrative price range for demonstration purposes.
+        </p>
+      </article>
+
+
+      <!-- Crop Information -->
+      <article class="tool-card">
+        <div class="tool-icon">♧</div>
+
+        <h2>Crop Information</h2>
+
+        <p>
+          Explore useful information about different crops,
+          their growing conditions and basic cultivation practices.
+        </p>
+
+        <div class="tool-result">
+          <span>Explore crop guides</span>
+          <strong>Coming Soon</strong>
+        </div>
+
+        <span class="coming-soon">Under Development</span>
+      </article>
+
+    </section>
+
+
+    <!-- Bottom Section -->
+    <section class="page-container">
+      <div class="tools-bottom">
+        <h2>Better information. Better opportunities.</h2>
+
+        <p>
+          AgriBridge aims to make useful agricultural information
+          easier to understand and access.
+        </p>
+      </div>
+    </section>
+
+  </main>
+
+
+  <!-- Footer -->
+  <footer>
+    <div class="page-container">
+      <p>AgriBridge — Connecting Farmers. Creating Opportunities.</p>
+      <p>Made with care by Team Banana Milkshake.</p>
+    </div>
+  </footer>
+
+</body>
+
+<script>
+  function calculateProfit() {
+
+    const quantity = Number(document.getElementById("quantity").value);
+    const sellingPrice = Number(document.getElementById("selling-price").value);
+    const costPrice = Number(document.getElementById("cost-price").value);
+
+    const result = document.getElementById("profit-result");
+    const label = document.getElementById("result-label");
+    const details = document.getElementById("result-details");
+
+    if (
+      document.getElementById("quantity").value === "" ||
+      document.getElementById("selling-price").value === "" ||
+      document.getElementById("cost-price").value === "" ||
+      !Number.isFinite(quantity) ||
+      !Number.isFinite(sellingPrice) ||
+      !Number.isFinite(costPrice) ||
+      quantity <= 0 ||
+      sellingPrice < 0 ||
+      costPrice < 0
+    ) {
+      label.textContent = "Invalid input";
+      result.textContent = "Please check your values";
+      details.textContent = "Quantity must be greater than zero. Prices cannot be negative.";
+      return;
+    }
+
+    const revenue = quantity * sellingPrice;
+    const totalCost = quantity * costPrice;
+    const profit = revenue - totalCost;
+
+    label.textContent = profit >= 0 ? "Estimated profit" : "Estimated loss";
+
+    result.textContent = "₹" + Math.abs(profit).toLocaleString("en-IN", {
+      minimumFractionDigits: 2,
+      maximumFractionDigits: 2
+    });
+
+    if (profit < 0) {
+      result.textContent = "- " + result.textContent;
+    }
+
+    details.textContent =
+      "Revenue: ₹" + revenue.toLocaleString("en-IN") +
+      " | Total cost: ₹" + totalCost.toLocaleString("en-IN");
+  }
+</script>
+
+</html>

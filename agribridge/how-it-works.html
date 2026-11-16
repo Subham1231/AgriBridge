@@ -1,0 +1,865 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="description" content="Discover how AgriBridge works, its features, purpose and future vision.">
+
+    <title>How It Works | AgriBridge</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <style>
+        /* Page Introduction */
+
+        .how-hero {
+            padding: 75px 0 65px;
+            text-align: center;
+        }
+
+        .eyebrow {
+            color: var(--green);
+            font-size: 13px;
+            font-weight: 700;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+        }
+
+        .how-hero h1 {
+            max-width: 800px;
+            margin: 17px auto;
+            font-size: clamp(38px, 5vw, 60px);
+            line-height: 1.12;
+            letter-spacing: -1.5px;
+        }
+
+        .how-hero p {
+            max-width: 680px;
+            margin: auto;
+            color: var(--muted);
+            line-height: 1.8;
+        }
+
+        /* Overview */
+
+        .overview-section {
+            padding: 70px 0;
+            background: var(--cream);
+        }
+
+        .section-heading {
+            max-width: 680px;
+            margin-bottom: 40px;
+        }
+
+        .section-heading h2 {
+            font-size: clamp(29px, 4vw, 43px);
+            line-height: 1.2;
+            margin: 13px 0;
+        }
+
+        .section-heading p {
+            color: var(--muted);
+            line-height: 1.8;
+        }
+
+        .overview-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+        }
+
+        .overview-card {
+            background: white;
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            padding: 27px;
+        }
+
+        .overview-number {
+            color: var(--green);
+            font-size: 14px;
+            font-weight: 800;
+            margin-bottom: 19px;
+        }
+
+        .overview-card h3 {
+            font-size: 19px;
+            margin-bottom: 10px;
+        }
+
+        .overview-card p {
+            color: var(--muted);
+            font-size: 14px;
+            line-height: 1.8;
+        }
+
+        /* Workflow */
+
+        .workflow-section {
+            padding: 85px 0;
+        }
+
+        .workflow-list {
+            display: grid;
+            gap: 18px;
+            max-width: 850px;
+        }
+
+        .workflow-step {
+            display: grid;
+            grid-template-columns: 65px 1fr;
+            gap: 20px;
+            align-items: start;
+            padding: 25px;
+            border: 1px solid var(--border);
+            border-radius: 15px;
+        }
+
+        .step-number {
+            width: 48px;
+            height: 48px;
+            display: grid;
+            place-items: center;
+            background: var(--green-light);
+            color: var(--green);
+            border-radius: 13px;
+            font-weight: 800;
+        }
+
+        .workflow-step h3 {
+            margin-bottom: 8px;
+        }
+
+        .workflow-step p {
+            color: var(--muted);
+            font-size: 14px;
+            line-height: 1.8;
+        }
+
+        /* Feature Details */
+
+        .feature-section {
+            padding: 80px 0;
+            background: var(--cream);
+        }
+
+        .feature-list {
+            display: grid;
+            gap: 25px;
+        }
+
+        .feature-detail {
+            display: grid;
+            grid-template-columns: 0.8fr 1.2fr;
+            gap: 35px;
+            align-items: center;
+            background: white;
+            border: 1px solid var(--border);
+            border-radius: 18px;
+            padding: 30px;
+        }
+
+        .feature-visual {
+            min-height: 210px;
+            display: grid;
+            place-items: center;
+            background: var(--green-light);
+            border-radius: 14px;
+            color: var(--green);
+            font-size: 65px;
+        }
+
+        .feature-detail h3 {
+            font-size: 24px;
+            margin: 10px 0;
+        }
+
+        .feature-detail p {
+            color: var(--muted);
+            line-height: 1.8;
+            font-size: 14px;
+        }
+
+        .feature-detail ul {
+            padding-left: 20px;
+            margin-top: 15px;
+            color: var(--text);
+            line-height: 2;
+            font-size: 14px;
+        }
+
+        .feature-detail a {
+            display: inline-block;
+            margin-top: 15px;
+            color: var(--green);
+            font-size: 14px;
+            font-weight: 700;
+            text-decoration: none;
+        }
+
+        .feature-detail a:hover {
+            text-decoration: underline;
+        }
+
+        /* Future Plans */
+
+        .future-section {
+            padding: 85px 0;
+        }
+
+        .future-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+        }
+
+        .future-card {
+            padding: 27px;
+            border: 1px solid var(--border);
+            border-radius: 15px;
+        }
+
+        .future-card h3 {
+            margin-bottom: 10px;
+        }
+
+        .future-card p {
+            color: var(--muted);
+            line-height: 1.8;
+            font-size: 14px;
+        }
+
+        .status {
+            display: inline-block;
+            padding: 6px 10px;
+            margin-bottom: 16px;
+            border-radius: 30px;
+            background: var(--green-light);
+            color: var(--green);
+            font-size: 11px;
+            font-weight: 800;
+            letter-spacing: .5px;
+            text-transform: uppercase;
+        }
+
+        .status.planned {
+            background: #f4f0e5;
+            color: #8b6b25;
+        }
+
+        /* Vision */
+
+        .closing-section {
+            padding: 0 0 80px;
+        }
+
+        .closing-box {
+            background: var(--green-dark);
+            color: white;
+            text-align: center;
+            padding: 55px 25px;
+            border-radius: 20px;
+        }
+
+        .closing-box h2 {
+            font-size: clamp(28px, 4vw, 43px);
+            margin-bottom: 14px;
+        }
+
+        .closing-box p {
+            max-width: 650px;
+            margin: auto;
+            color: rgba(255, 255, 255, .75);
+            line-height: 1.8;
+        }
+
+        /* Responsive */
+
+        @media (max-width: 800px) {
+            .overview-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            .feature-detail {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 600px) {
+
+            .overview-grid,
+            .future-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .workflow-step {
+                grid-template-columns: 45px 1fr;
+                padding: 19px;
+                gap: 13px;
+            }
+
+            .step-number {
+                width: 40px;
+                height: 40px;
+            }
+
+            .feature-detail {
+                padding: 20px;
+            }
+
+            .feature-visual {
+                min-height: 150px;
+            }
+        }
+    </style>
+
+</head>
+
+
+<body>
+
+    <!-- Navigation -->
+
+    <header class="navbar">
+
+        <a href="index.html" class="logo">
+            AgriBridge
+        </a>
+
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="mandi.html">Mandi Prices</a>
+            <a href="how-it-works.html">How It Works</a>
+            <a href="tools.html">Explore Tools</a>
+        </nav>
+
+        <a href="marketplace.html" class="button primary nav-cta">
+            Marketplace
+        </a>
+
+    </header>
+
+
+
+    <main>
+
+        <!-- Hero -->
+
+        <section class="page-container how-hero">
+
+            <span class="eyebrow">
+                Understanding AgriBridge
+            </span>
+
+            <h1>
+                A bridge between farmers, information and opportunities.
+            </h1>
+
+            <p>
+                AgriBridge brings together agricultural market information,
+                selling opportunities and useful tools in one place.
+                Here's how the platform is designed to work and what
+                we aim to build.
+            </p>
+
+        </section>
+
+
+
+        <!-- Platform Overview -->
+
+        <section class="overview-section">
+
+            <div class="page-container">
+
+                <div class="section-heading">
+
+                    <span class="eyebrow">
+                        Platform Overview
+                    </span>
+
+                    <h2>
+                        Three ideas. One connected platform.
+                    </h2>
+
+                    <p>
+                        Every part of AgriBridge is built around three
+                        important ideas: helping users access information,
+                        discover connections and make informed decisions.
+                    </p>
+
+                </div>
+
+
+                <div class="overview-grid">
+
+                    <article class="overview-card">
+
+                        <div class="overview-number">01 / INFORMATION</div>
+
+                        <h3>Understand the Market</h3>
+
+                        <p>
+                            Access agricultural price information and
+                            explore market comparisons to understand
+                            how crops are valued.
+                        </p>
+
+                    </article>
+
+
+                    <article class="overview-card">
+
+                        <div class="overview-number">02 / CONNECTIONS</div>
+
+                        <h3>Discover Opportunities</h3>
+
+                        <p>
+                            Explore a shared marketplace concept that
+                            brings farmers and potential buyers closer.
+                        </p>
+
+                    </article>
+
+
+                    <article class="overview-card">
+
+                        <div class="overview-number">03 / DECISIONS</div>
+
+                        <h3>Make Informed Choices</h3>
+
+                        <p>
+                            Use simple tools to estimate profits and
+                            understand different agricultural scenarios.
+                        </p>
+
+                    </article>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- Workflow -->
+
+        <section class="workflow-section">
+
+            <div class="page-container">
+
+                <div class="section-heading">
+
+                    <span class="eyebrow">
+                        How It Works
+                    </span>
+
+                    <h2>
+                        From information to opportunity.
+                    </h2>
+
+                    <p>
+                        The intended user journey through AgriBridge
+                        is designed to be simple and accessible.
+                    </p>
+
+                </div>
+
+
+                <div class="workflow-list">
+
+
+                    <article class="workflow-step">
+
+                        <div class="step-number">01</div>
+
+                        <div>
+
+                            <h3>Explore Market Information</h3>
+
+                            <p>
+                                Users can visit the Mandi Prices section
+                                to explore crop prices and compare
+                                illustrative market information.
+                            </p>
+
+                        </div>
+
+                    </article>
+
+
+                    <article class="workflow-step">
+
+                        <div class="step-number">02</div>
+
+                        <div>
+
+                            <h3>Discover the Marketplace</h3>
+
+                            <p>
+                                Users can browse sample agricultural
+                                listings and explore how farmers could
+                                present their produce to potential buyers.
+                            </p>
+
+                        </div>
+
+                    </article>
+
+
+                    <article class="workflow-step">
+
+                        <div class="step-number">03</div>
+
+                        <div>
+
+                            <h3>Use Agricultural Tools</h3>
+
+                            <p>
+                                Users can explore tools such as the
+                                profit calculator to estimate possible
+                                earnings based on their own inputs.
+                            </p>
+
+                        </div>
+
+                    </article>
+
+
+                    <article class="workflow-step">
+
+                        <div class="step-number">04</div>
+
+                        <div>
+
+                            <h3>Make Better-Informed Decisions</h3>
+
+                            <p>
+                                By bringing information and useful
+                                calculations together, AgriBridge aims
+                                to help users understand their options
+                                before making decisions.
+                            </p>
+
+                        </div>
+
+                    </article>
+
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- Feature Details -->
+
+        <section class="feature-section">
+
+            <div class="page-container">
+
+                <div class="section-heading">
+
+                    <span class="eyebrow">
+                        Explore the Features
+                    </span>
+
+                    <h2>
+                        A closer look at what AgriBridge offers.
+                    </h2>
+
+                    <p>
+                        Each feature has a different purpose, but all
+                        of them contribute to the same goal.
+                    </p>
+
+                </div>
+
+
+                <div class="feature-list">
+
+
+                    <!-- Mandi -->
+
+                    <article class="feature-detail">
+
+                        <div class="feature-visual">
+                            ↗
+                        </div>
+
+                        <div>
+
+                            <span class="eyebrow">
+                                Feature 01
+                            </span>
+
+                            <h3>Mandi Prices</h3>
+
+                            <p>
+                                Agricultural prices can vary between
+                                markets. The Mandi Prices section is
+                                designed to make this information easier
+                                to explore and compare.
+                            </p>
+
+                            <ul>
+                                <li>Explore different agricultural commodities.</li>
+                                <li>Compare prices across sample markets.</li>
+                                <li>View market information in a structured format.</li>
+                                <li>Understand price differences between locations.</li>
+                            </ul>
+
+                            <a href="mandi.html">
+                                Explore Mandi Prices →
+                            </a>
+
+                        </div>
+
+                    </article>
+
+
+
+                    <!-- Marketplace -->
+
+                    <article class="feature-detail">
+
+                        <div class="feature-visual">
+                            ⇄
+                        </div>
+
+                        <div>
+
+                            <span class="eyebrow">
+                                Feature 02
+                            </span>
+
+                            <h3>Marketplace</h3>
+
+                            <p>
+                                The Marketplace is designed as a shared
+                                space where agricultural produce can be
+                                listed and discovered by interested buyers.
+                            </p>
+
+                            <ul>
+                                <li>Browse agricultural product listings.</li>
+                                <li>View sample prices and quantities.</li>
+                                <li>Explore produce by category and location.</li>
+                                <li>Discover how farmers and buyers could connect.</li>
+                            </ul>
+
+                            <a href="marketplace.html">
+                                Visit Marketplace →
+                            </a>
+
+                        </div>
+
+                    </article>
+
+
+
+                    <!-- Tools -->
+
+                    <article class="feature-detail">
+
+                        <div class="feature-visual">
+                            ◈
+                        </div>
+
+                        <div>
+
+                            <span class="eyebrow">
+                                Feature 03
+                            </span>
+
+                            <h3>Smart Agricultural Tools</h3>
+
+                            <p>
+                                AgriBridge includes simple tools designed
+                                to help users understand agricultural
+                                calculations and market-related information.
+                            </p>
+
+                            <ul>
+                                <li>Calculate estimated selling profit or loss.</li>
+                                <li>Explore illustrative price prediction values.</li>
+                                <li>Compare sample market price ranges.</li>
+                                <li>Discover agricultural information and guides.</li>
+                            </ul>
+
+                            <a href="tools.html">
+                                Explore Tools →
+                            </a>
+
+                        </div>
+
+                    </article>
+
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- Future Development -->
+
+        <section class="future-section">
+
+            <div class="page-container">
+
+                <div class="section-heading">
+
+                    <span class="eyebrow">
+                        Looking Ahead
+                    </span>
+
+                    <h2>
+                        What we want AgriBridge to become.
+                    </h2>
+
+                    <p>
+                        Our current project is a starting point.
+                        These are some of the possibilities we want
+                        to explore as AgriBridge develops.
+                    </p>
+
+                </div>
+
+
+                <div class="future-grid">
+
+
+                    <article class="future-card">
+
+                        <span class="status planned">
+                            Planned
+                        </span>
+
+                        <h3>Live Market Data</h3>
+
+                        <p>
+                            Integrating reliable market data sources
+                            to provide more up-to-date agricultural
+                            price information.
+                        </p>
+
+                    </article>
+
+
+                    <article class="future-card">
+
+                        <span class="status planned">
+                            Planned
+                        </span>
+
+                        <h3>Farmer and Buyer Connections</h3>
+
+                        <p>
+                            Developing ways for farmers and buyers
+                            to communicate and explore potential
+                            business opportunities.
+                        </p>
+
+                    </article>
+
+
+                    <article class="future-card">
+
+                        <span class="status planned">
+                            Planned
+                        </span>
+
+                        <h3>Advanced Price Insights</h3>
+
+                        <p>
+                            Exploring data-driven analysis that
+                            could help users understand price trends
+                            and possible market movements.
+                        </p>
+
+                    </article>
+
+
+                    <article class="future-card">
+
+                        <span class="status planned">
+                            Planned
+                        </span>
+
+                        <h3>More Agricultural Tools</h3>
+
+                        <p>
+                            Expanding the platform with additional
+                            calculators, crop information and
+                            useful agricultural resources.
+                        </p>
+
+                    </article>
+
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- Closing Vision -->
+
+        <section class="page-container closing-section">
+
+            <div class="closing-box">
+
+                <h2>
+                    The future of agriculture deserves better connections.
+                </h2>
+
+                <p>
+                    AgriBridge is our attempt to bring technology
+                    closer to agriculture — making information
+                    accessible, opportunities easier to discover
+                    and decisions easier to understand.
+                    This is only the beginning.
+                </p>
+
+            </div>
+
+        </section>
+
+
+    </main>
+
+
+
+    <!-- Footer -->
+
+    <footer>
+
+        <div class="page-container">
+
+            <p>
+                AgriBridge — Connecting Farmers. Creating Opportunities.
+            </p>
+
+            <p>
+                Built with care by Team Banana Milkshake.
+            </p>
+
+        </div>
+
+    </footer>
+
+
+</body>
+
+</html>

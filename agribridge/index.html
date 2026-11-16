@@ -1,0 +1,711 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="description"
+        content="AgriBridge connects farmers with market information, opportunities and useful agricultural tools.">
+
+    <title>AgriBridge | Connecting Farmers. Creating Opportunities.</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <style>
+        /* Landing Page */
+
+        .home-hero {
+            min-height: 570px;
+            display: grid;
+            grid-template-columns: 1.05fr 0.95fr;
+            align-items: center;
+            gap: 55px;
+            padding-top: 65px;
+            padding-bottom: 65px;
+        }
+
+        .hero-content .eyebrow,
+        .section-eyebrow {
+            color: var(--green);
+            font-size: 13px;
+            font-weight: 700;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+        }
+
+        .hero-content h1 {
+            font-size: clamp(42px, 5.5vw, 68px);
+            line-height: 1.08;
+            letter-spacing: -2px;
+            margin: 20px 0;
+        }
+
+        .hero-content h1 span {
+            color: var(--green);
+        }
+
+        .hero-content p {
+            max-width: 510px;
+            color: var(--muted);
+            line-height: 1.8;
+            font-size: 16px;
+            margin-bottom: 28px;
+        }
+
+        .hero-actions {
+            display: flex;
+            gap: 13px;
+            flex-wrap: wrap;
+        }
+
+        .hero-image {
+            position: relative;
+            min-height: 420px;
+            border-radius: 24px;
+            overflow: hidden;
+            background: #e5eadf;
+        }
+
+        .hero-image img {
+            width: 100%;
+            height: 100%;
+            min-height: 420px;
+            object-fit: cover;
+            display: block;
+        }
+
+        .hero-image-caption {
+            position: absolute;
+            bottom: 20px;
+            left: 20px;
+            right: 20px;
+            padding: 17px 20px;
+            background: rgba(255, 255, 255, .92);
+            border-radius: 13px;
+        }
+
+        .hero-image-caption strong {
+            display: block;
+            color: var(--green-dark);
+            margin-bottom: 4px;
+        }
+
+        .hero-image-caption span {
+            font-size: 13px;
+            color: var(--muted);
+        }
+
+        /* Mission */
+
+        .mission-section {
+            padding: 85px 0;
+            background: var(--cream);
+        }
+
+        .mission-layout {
+            display: grid;
+            grid-template-columns: 0.8fr 1.2fr;
+            gap: 70px;
+            align-items: start;
+        }
+
+        .mission-layout h2 {
+            font-size: clamp(30px, 4vw, 45px);
+            line-height: 1.2;
+            margin-top: 15px;
+        }
+
+        .mission-content p {
+            color: var(--muted);
+            line-height: 1.9;
+            margin-bottom: 18px;
+        }
+
+        .mission-highlight {
+            border-left: 3px solid var(--green);
+            padding-left: 20px;
+            margin-top: 25px;
+            color: var(--green-dark);
+            font-size: 18px;
+            font-weight: 600;
+            line-height: 1.6;
+        }
+
+        /* Vision */
+
+        .vision-section {
+            padding: 90px 0;
+        }
+
+        .vision-box {
+            background: var(--green-dark);
+            color: white;
+            padding: 55px;
+            border-radius: 22px;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            align-items: center;
+        }
+
+        .vision-box .section-eyebrow {
+            color: #b7d6b8;
+        }
+
+        .vision-box h2 {
+            font-size: clamp(30px, 4vw, 46px);
+            line-height: 1.2;
+            margin: 15px 0;
+        }
+
+        .vision-box p {
+            color: rgba(255, 255, 255, .78);
+            line-height: 1.8;
+        }
+
+        .vision-points {
+            display: grid;
+            gap: 18px;
+        }
+
+        .vision-point {
+            padding: 19px;
+            border: 1px solid rgba(255, 255, 255, .17);
+            border-radius: 13px;
+            background: rgba(255, 255, 255, .06);
+        }
+
+        .vision-point strong {
+            display: block;
+            margin-bottom: 6px;
+        }
+
+        .vision-point span {
+            color: rgba(255, 255, 255, .7);
+            font-size: 14px;
+            line-height: 1.6;
+        }
+
+        /* Features */
+
+        .features-section {
+            padding: 85px 0;
+            background: var(--cream);
+        }
+
+        .section-heading {
+            max-width: 650px;
+            margin-bottom: 42px;
+        }
+
+        .section-heading h2 {
+            font-size: clamp(30px, 4vw, 44px);
+            line-height: 1.2;
+            margin: 14px 0;
+        }
+
+        .section-heading p {
+            color: var(--muted);
+            line-height: 1.8;
+        }
+
+        .home-features {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 22px;
+        }
+
+        .home-feature {
+            background: white;
+            padding: 30px;
+            border: 1px solid var(--border);
+            border-radius: 17px;
+            transition: transform .2s ease;
+        }
+
+        .home-feature:hover {
+            transform: translateY(-5px);
+        }
+
+        .feature-icon {
+            width: 48px;
+            height: 48px;
+            display: grid;
+            place-items: center;
+            background: var(--green-light);
+            color: var(--green);
+            border-radius: 13px;
+            font-size: 23px;
+            margin-bottom: 20px;
+        }
+
+        .home-feature h3 {
+            margin-bottom: 10px;
+            font-size: 19px;
+        }
+
+        .home-feature p {
+            color: var(--muted);
+            font-size: 14px;
+            line-height: 1.8;
+            margin-bottom: 20px;
+        }
+
+        .feature-link {
+            color: var(--green);
+            font-weight: 700;
+            font-size: 14px;
+            text-decoration: none;
+        }
+
+        .feature-link:hover {
+            text-decoration: underline;
+        }
+
+        /* Closing CTA */
+
+        .home-cta {
+            padding: 85px 0;
+        }
+
+        .home-cta-box {
+            text-align: center;
+            padding: 55px 25px;
+            background: var(--green-light);
+            border-radius: 22px;
+        }
+
+        .home-cta-box h2 {
+            font-size: clamp(29px, 4vw, 43px);
+            margin-bottom: 13px;
+        }
+
+        .home-cta-box p {
+            max-width: 570px;
+            margin: 0 auto 25px;
+            color: var(--muted);
+            line-height: 1.8;
+        }
+
+        /* Responsive */
+
+        @media (max-width: 900px) {
+            .home-hero {
+                grid-template-columns: 1fr;
+                gap: 35px;
+            }
+
+            .hero-image {
+                min-height: 350px;
+            }
+
+            .hero-image img {
+                min-height: 350px;
+            }
+
+            .mission-layout {
+                grid-template-columns: 1fr;
+                gap: 25px;
+            }
+
+            .vision-box {
+                grid-template-columns: 1fr;
+                padding: 35px;
+            }
+
+            .home-features {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
+        @media (max-width: 600px) {
+            .home-features {
+                grid-template-columns: 1fr;
+            }
+
+            .home-hero {
+                padding-top: 40px;
+                padding-bottom: 45px;
+            }
+
+            .hero-content h1 {
+                letter-spacing: -1px;
+            }
+
+            .vision-box {
+                padding: 27px;
+            }
+        }
+    </style>
+</head>
+
+
+<body>
+
+    <!-- Navigation -->
+
+    <header class="navbar">
+
+        <a href="index.html" class="logo">
+            AgriBridge
+        </a>
+
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="mandi.html">Mandi Prices</a>
+            <a href="how-it-works.html">How It Works</a>
+            <a href="tools.html">Explore Tools</a>
+        </nav>
+
+        <a href="marketplace.html" class="button primary nav-cta">
+            Marketplace
+        </a>
+
+    </header>
+
+
+    <main>
+
+        <!-- Hero Section -->
+
+        <section class="page-container home-hero">
+
+            <div class="hero-content">
+
+                <span class="eyebrow">
+                    Introducing AgriBridge
+                </span>
+
+                <h1>
+                    Connecting Farmers.
+                    <span>Creating Opportunities.</span>
+                </h1>
+
+                <p>
+                    Agriculture is more than just growing crops.
+                    It's about making the right decisions, finding
+                    the right markets and getting better opportunities.
+
+                    AgriBridge aims to bring these possibilities
+                    together in one accessible platform.
+                </p>
+
+                <div class="hero-actions">
+
+                    <a href="marketplace.html" class="button primary">
+                        Explore Marketplace
+                    </a>
+
+                    <a href="how-it-works.html" class="button secondary">
+                        Discover AgriBridge
+                    </a>
+
+                </div>
+
+            </div>
+
+
+            <div class="hero-image">
+
+                <img src="https://images.unsplash.com/photo-1500382017468-9049fed747ef?w=1200&q=85"
+                    alt="Wide green agricultural fields">
+
+                <div class="hero-image-caption">
+
+                    <strong>Growing a better agricultural future.</strong>
+
+                    <span>
+                        Better information. Better connections. Better opportunities.
+                    </span>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- Our Motive -->
+
+        <section class="mission-section">
+
+            <div class="page-container mission-layout">
+
+                <div>
+
+                    <span class="section-eyebrow">
+                        Our Motive
+                    </span>
+
+                    <h2>
+                        Technology should create opportunities for everyone.
+                    </h2>
+
+                </div>
+
+
+                <div class="mission-content">
+
+                    <p>
+                        Farmers play an essential role in our everyday lives,
+                        yet finding reliable market information, comparing
+                        prices and reaching potential buyers can be challenging.
+                    </p>
+
+                    <p>
+                        We believe that useful agricultural information and
+                        digital opportunities should be easier to access.
+                        Farmers should have better ways to understand markets,
+                        explore selling opportunities and estimate their earnings.
+                    </p>
+
+                    <p>
+                        That's why we are building AgriBridge: a platform
+                        designed to bring important agricultural resources
+                        closer to the people who need them.
+                    </p>
+
+                    <div class="mission-highlight">
+                        Our motive is simple: reduce the gap between farmers,
+                        information and opportunities.
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- Our Vision -->
+
+        <section class="page-container vision-section">
+
+            <div class="vision-box">
+
+                <div>
+
+                    <span class="section-eyebrow">
+                        Our Vision
+                    </span>
+
+                    <h2>
+                        Building a smarter connection between agriculture and technology.
+                    </h2>
+
+                    <p>
+                        We envision an accessible agricultural ecosystem
+                        where farmers can make informed decisions,
+                        discover opportunities and understand the value
+                        of their produce.
+                    </p>
+
+                </div>
+
+
+                <div class="vision-points">
+
+                    <div class="vision-point">
+
+                        <strong>Accessible Information</strong>
+
+                        <span>
+                            Make useful market information easier to find
+                            and understand.
+                        </span>
+
+                    </div>
+
+
+                    <div class="vision-point">
+
+                        <strong>Better Connections</strong>
+
+                        <span>
+                            Help bring farmers and potential buyers closer
+                            through a shared marketplace.
+                        </span>
+
+                    </div>
+
+
+                    <div class="vision-point">
+
+                        <strong>Smarter Decisions</strong>
+
+                        <span>
+                            Provide simple tools that can help users
+                            understand prices and estimate profits.
+                        </span>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- What AgriBridge Offers -->
+
+        <section class="features-section">
+
+            <div class="page-container">
+
+                <div class="section-heading">
+
+                    <span class="section-eyebrow">
+                        Explore AgriBridge
+                    </span>
+
+                    <h2>
+                        Everything starts with better information.
+                    </h2>
+
+                    <p>
+                        Explore the different parts of AgriBridge and
+                        discover how each feature contributes to our vision.
+                    </p>
+
+                </div>
+
+
+                <div class="home-features">
+
+
+                    <!-- Mandi Prices -->
+
+                    <article class="home-feature">
+
+                        <div class="feature-icon">
+                            ↗
+                        </div>
+
+                        <h3>Mandi Prices</h3>
+
+                        <p>
+                            Explore agricultural market prices and compare
+                            the value of different crops across markets.
+                        </p>
+
+                        <a href="mandi.html" class="feature-link">
+                            Explore Mandi Prices →
+                        </a>
+
+                    </article>
+
+
+
+                    <!-- Marketplace -->
+
+                    <article class="home-feature">
+
+                        <div class="feature-icon">
+                            ⇄
+                        </div>
+
+                        <h3>Marketplace</h3>
+
+                        <p>
+                            Discover a platform designed to connect farmers
+                            with buyers and create more selling opportunities.
+                        </p>
+
+                        <a href="marketplace.html" class="feature-link">
+                            Visit Marketplace →
+                        </a>
+
+                    </article>
+
+
+
+                    <!-- Tools -->
+
+                    <article class="home-feature">
+
+                        <div class="feature-icon">
+                            ◈
+                        </div>
+
+                        <h3>Smart Tools</h3>
+
+                        <p>
+                            Explore useful agricultural tools, including
+                            profit estimation and market-related insights.
+                        </p>
+
+                        <a href="tools.html" class="feature-link">
+                            Explore Tools →
+                        </a>
+
+                    </article>
+
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- How It Works Preview -->
+
+        <section class="page-container home-cta">
+
+            <div class="home-cta-box">
+
+                <span class="section-eyebrow">
+                    Get to know us
+                </span>
+
+                <h2>
+                    There's more to AgriBridge.
+                </h2>
+
+                <p>
+                    Discover how our platform works, understand each feature,
+                    explore what we are building and see where we want to
+                    take AgriBridge in the future.
+                </p>
+
+                <a href="how-it-works.html" class="button primary">
+                    Explore How It Works →
+                </a>
+
+            </div>
+
+        </section>
+
+
+    </main>
+
+
+
+    <!-- Footer -->
+
+    <footer>
+
+        <div class="page-container">
+
+            <p>
+                AgriBridge — Connecting Farmers. Creating Opportunities.
+            </p>
+
+            <p>
+                Built with care by </b>Team Banana Milkshake</b>.
+            </p>
+
+        </div>
+
+    </footer>
+
+
+</body>
+
+</html>
